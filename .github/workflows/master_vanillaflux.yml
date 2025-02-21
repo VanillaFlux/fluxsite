@@ -81,5 +81,5 @@ jobs:
         with:
           app-name: 'vanillaflux'
           slot-name: 'Production'
-          package: '*.war'
+          package: '*-latest.war'
           
