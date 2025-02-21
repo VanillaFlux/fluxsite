@@ -4,7 +4,6 @@ import com.quiptmc.core.QuiptIntegration;
 import com.quiptmc.core.config.Config;
 import com.quiptmc.core.config.ConfigTemplate;
 import com.quiptmc.core.config.ConfigValue;
-import com.quiptmc.minecraft.MinecraftServer;
 import com.vanillaflux.site.feedback.Feedback;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -27,7 +26,7 @@ public class ServerStorageConfig extends Config {
         super(file, name, extension, integration);
     }
 
-    public MinecraftServer createServer(String ip, String secret) {
+    public void createServer(String ip, String secret) {
         JSONObject server = new JSONObject();
         server.put("ip", ip);
         server.put("secret", secret);
@@ -36,8 +35,6 @@ public class ServerStorageConfig extends Config {
         servers.put(ip, server);
         reportRequest(ip, RequestType.REGISTER, Feedback.Result.SUCCESS);
         save();
-        //todo remove all api data from MinecraftServer
-        return new MinecraftServer(ip, server);
     }
 
     private void reportRequest(String ip, RequestType type, Feedback.Result result) {

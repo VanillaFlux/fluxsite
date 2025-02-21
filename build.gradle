@@ -31,7 +31,6 @@ dependencies {
     providedRuntime "org.springframework.boot:spring-boot-starter-tomcat"
     implementation "org.json:json:$json_version"
     implementation "com.quiptmc:quipt-core:$quipt_core_version"
-    implementation "com.quiptmc:quipt-minecraft-utility:$quipt_minecraft_utility_version"
 }
 
 test {
