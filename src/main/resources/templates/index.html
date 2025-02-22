@@ -218,24 +218,20 @@
     <section id="members" class="members section">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4">
-                <div id="memberCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div id="memberCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item" data-bs-interval="10000" th:each="member, iterStat : ${usernameMap}"
                              th:classappend="${iterStat.index == 0} ? 'active'">
                             <div>
-                                <img th:src="'https://starlightskins.lunareclipse.studio/render/profile/' + ${member.key} + '/full'" th:alt="${member.value} + ' Skin'"
-                                     class="img-fluid">
-<!--                                <p>Here's some information about <span th:text="${member.value}"></span>. </p>-->
-<!--                                <ul>-->
-<!--                                    <li><b>Jumps</b>: <span th:text="${data.getJSONObject(member.key).optInt('jumps', 0)}"></span> </li>-->
-<!--                                </ul>-->
+                                <img th:src="@{/assets/img/background/member-background.jpg}" class="img-fluid" alt="">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <img th:src="'https://starlightskins.lunareclipse.studio/render/bitzel/' + ${member.key} + '/full'"
+                                         th:alt="${member.value} + ' Skin'"
+                                         class="col-lg-1">
+                                    <h5><span th:text="${member.value}"></span></h5>
+                                    <p>Some representative placeholder content text.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="2000">
-                            Member Data 2
-                        </div>
-                        <div class="carousel-item">
-                            Member Data 3
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#memberCarousel"
