@@ -18,6 +18,7 @@ repositories {
 
 bootWar {
     archiveFileName = "${rootProject.name}-latest.war"
+
 }
 
 dependencies {
