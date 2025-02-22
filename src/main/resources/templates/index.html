@@ -18,10 +18,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet">
 
-<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-json.min.js"></script>-->
+    <!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />-->
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>-->
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>-->
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-json.min.js"></script>-->
 
     <!-- Vendor CSS Files -->
     <link th:href="@{/assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
@@ -33,6 +33,7 @@
 
     <!-- Main CSS File -->
     <link th:href="@{/assets/css/main.css}" rel="stylesheet">
+    <link th:href="@{/assets/css/custom.css}" rel="stylesheet">
 
     <!-- =======================================================
     * Template Name: Bootslander
@@ -101,54 +102,6 @@
 
     </section><!-- /Hero Section -->
 
-    <!-- Stats Section -->
-    <section id="stats" class="stats section">
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row gy-4">
-
-                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-                    <i class="bi bi-people"></i>
-                    <div class="stats-item">
-                        <span data-purecounter-start="0" th:data-purecounter-end="${servers}"
-                              data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Active Members</p>
-                    </div>
-                </div><!-- End Stats Item -->
-
-                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-                    <i class="bi bi-journal-richtext"></i>
-                    <div class="stats-item">
-                        <span data-purecounter-start="0" th:data-purecounter-end="${requestsHandled}"
-                              data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Requests Handled</p>
-                    </div>
-                </div><!-- End Stats Item -->
-
-                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-                    <i class="bi bi-cloud-arrow-up"></i>
-                    <div class="stats-item">
-                        <span data-purecounter-start="0" th:data-purecounter-end="${uptime}"
-                              data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Uptime (%)</p>
-                    </div>
-                </div><!-- End Stats Item -->
-
-                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-                    <i class="bi bi-people"></i>
-                    <div class="stats-item">
-                        <span data-purecounter-start="0" th:data-purecounter-end="${hardWorkers}"
-                              data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Hard Workers</p>
-                    </div>
-                </div><!-- End Stats Item -->
-
-            </div>
-
-        </div>
-
-    </section><!-- /Stats Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -211,6 +164,98 @@
 
     </section><!-- /About Section -->
 
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="bi bi-people"></i>
+                    <div class="stats-item">
+                        <span data-purecounter-start="0" th:data-purecounter-end="${data.getInt('active_members')}"
+                              data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Active Members</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="bi bi-journal-richtext"></i>
+                    <div class="stats-item">
+                        <span data-purecounter-start="0" th:data-purecounter-end="${data.getInt('total_jumps')}"
+                              data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Total Jumps</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="bi bi-cloud-arrow-up"></i>
+                    <div class="stats-item">
+                        <span data-purecounter-start="0" th:data-purecounter-end="${uptime}"
+                              data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Uptime (%)</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="bi bi-people"></i>
+                    <div class="stats-item">
+                        <span data-purecounter-start="0"
+                              th:data-purecounter-end="${data.getInt('total_playtime')/3600000}"
+                              data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Total Playtime (Hrs.)</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Stats Section -->
+
+    <!--- Member Section --->
+    <section id="members" class="members section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-4">
+                <div id="memberCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item" data-bs-interval="10000" th:each="member, iterStat : ${usernameMap}"
+                             th:classappend="${iterStat.index == 0} ? 'active'">
+                            <div>
+                                <img th:src="'https://starlightskins.lunareclipse.studio/render/profile/' + ${member.key} + '/full'" th:alt="${member.value} + ' Skin'"
+                                     class="img-fluid">
+<!--                                <p>Here's some information about <span th:text="${member.value}"></span>. </p>-->
+<!--                                <ul>-->
+<!--                                    <li><b>Jumps</b>: <span th:text="${data.getJSONObject(member.key).optInt('jumps', 0)}"></span> </li>-->
+<!--                                </ul>-->
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            Member Data 2
+                        </div>
+                        <div class="carousel-item">
+                            Member Data 3
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#memberCarousel"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#memberCarousel"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--- /Member Section --->
+
+
+    <!-- How to use Section -->
     <section id="how-to-use" class="section">
         <div class="container">
             <div class="row gy-4">
@@ -236,7 +281,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section><!-- /How to use Section -->
 
 
     <!-- Features Section -->

@@ -31,6 +31,9 @@ dependencies {
     providedRuntime "org.springframework.boot:spring-boot-starter-tomcat"
     implementation "org.json:json:$json_version"
     implementation "com.quiptmc:quipt-core:$quipt_core_version"
+    implementation "com.zaxxer:HikariCP:$hikari_version"
+    implementation "mysql:mysql-connector-java:8.0.33"
+
 }
 
 test {
