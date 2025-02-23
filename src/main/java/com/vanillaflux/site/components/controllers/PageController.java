@@ -25,7 +25,7 @@ public class PageController {
     public String home(Model model) {
 
 //        int members = 0;
-//        int totalJumps = 0;
+//        int atotalJumps = 0;
         Map<UUID, String> usernameMap = new HashMap<>();
         JSONObject users = new JSONObject();
         SqlDatabase database = SqlUtils.getDatabase("core");
@@ -53,15 +53,18 @@ public class PageController {
                         JSONObject session = sessions.getJSONObject(i);
                         users.put("total_jumps", users.optInt("total_jumps", 0) + session.optInt("jumps",0));
                         users.put("total_playtime", users.optLong("total_playtime", 0) + session.optLong("playtime"));
-
+                        user.put("total_jumps", user.optInt("total_jumps", 0) + session.optInt("jumps",0));
+                        user.put("total_playtime", user.optLong("total_playtime", 0) + session.optLong("playtime"));
                     }
                 }
-                user.put("data", json);
+//                user.put("data", json);
             }
 
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
+
+        System.out.println(users.toString(2));
 //
 //
 //        model.addAttribute("members", members);
