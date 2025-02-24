@@ -63,16 +63,7 @@ public class PageController {
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
-
-        System.out.println(users.toString(2));
-//
-//
-//        model.addAttribute("members", members);
-//        model.addAttribute("jumps", totalJumps);
         model.addAttribute("uptime", Main.utils.uptimeManager.getUptime());
-//        model.addAttribute("hardWorkers", 25);
-
-
         model.addAttribute("data", users);
         model.addAttribute("usernameMap", usernameMap);
         return "index";

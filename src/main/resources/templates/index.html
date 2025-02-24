@@ -76,7 +76,7 @@
                     <h1>Welcome to <span>VanillaFlux</span>!</h1>
                     <p>Little about us blurb.</p>
                     <div class="d-flex">
-                        <a href="#about" class="btn-get-started">Get Started</a>
+                        <a href="#about" class="btn-get-started">Learn More</a>
                     </div>
                 </div>
 
@@ -110,11 +110,13 @@
             <div class="row align-items-xl-center gy-5">
 
                 <div class="col-xl-5 content">
-                    <h3>Getting Started</h3>
-                    <h2>How to use </h2>
-                    <p>The Quipt API is most effective when used with a server with <a href="#">Quipt</a> installed,
-                        however, will pull information from all Minecraft servers.</p>
-                    <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                    <h3>About Us</h3>
+                    <h2>VanillaFlux</h2>
+                    <p>VanillaFlux is a whitelisted Minecraft server that takes heavy inspiration from Hermitcraft and
+                        Empires SMP.
+                        We strive for a mostly vanilla experience, however we do support a few mods such as
+                        Optifine (for custom textures), SimpleVoiceChat for more seamless chatting, and more.</p>
+                    <a href="#members" class="read-more"><span>Meet Our Members</span><i class="bi bi-arrow-right"></i></a>
                 </div>
 
                 <div class="col-xl-7">
@@ -122,37 +124,39 @@
 
                         <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                             <div class="icon-box">
-                                <i class="bi bi-buildings"></i>
-                                <h3>Eius provident</h3>
-                                <p>Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor
-                                    voluptatem</p>
+                                <i class="bi bi-person-arms-up"></i>
+                                <h3>Friendly Community</h3>
+                                <p>Every member goes though an interview process with all other members to verify they
+                                    are a good fit for the community.</p>
                             </div>
                         </div> <!-- End Icon Box -->
 
                         <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                             <div class="icon-box">
-                                <i class="bi bi-clipboard-pulse"></i>
-                                <h3>Rerum aperiam</h3>
-                                <p>Autem saepe animi et aut aspernatur culpa facere. Rerum saepe rerum voluptates
-                                    quia</p>
+                                <i class="bi bi-people"></i>
+                                <h3>Inclusive</h3>
+                                <p>At VanillaFlux, we are proud to say we are an inclusive community — everyone is
+                                    welcome to apply!</p>
+
                             </div>
                         </div> <!-- End Icon Box -->
 
                         <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
                             <div class="icon-box">
-                                <i class="bi bi-command"></i>
-                                <h3>Veniam omnis</h3>
-                                <p>Omnis perferendis molestias culpa sed. Recusandae quas possimus. Quod consequatur
-                                    corrupti</p>
+                                <i class="bi bi-puzzle"></i>
+                                <h3>Custom Textures</h3>
+                                <p>VanillaFlux provides a custom resource pack when you log into the server, this allows
+                                    for members to create and share their custom textured items.</p>
                             </div>
                         </div> <!-- End Icon Box -->
 
                         <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
                             <div class="icon-box">
-                                <i class="bi bi-graph-up-arrow"></i>
-                                <h3>Delares sapiente</h3>
-                                <p>Sint et dolor voluptas minus possimus nostrum. Reiciendis commodi eligendi omnis
-                                    quideme lorenda</p>
+                                <i class="bi bi-layers"></i>
+                                <h3>Vanilla Experience</h3>
+                                <p>There are some QoL and Texture/Entity Rendering mods installed on the server,
+                                    however,
+                                    none of this changes gameplay — you can even log in with your vanilla client!</p>
                             </div>
                         </div> <!-- End Icon Box -->
 
@@ -166,7 +170,10 @@
 
     <!-- Stats Section -->
     <section id="stats" class="stats section">
-
+        <div class="container section-title aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <h2>Stats</h2>
+            <div><span>Check out our</span> <span class="description-title">Stats</span></div>
+        </div>
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="row gy-4">
@@ -216,16 +223,22 @@
 
     <!--- Member Section --->
     <section id="members" class="members section">
+        <div class="container section-title aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <h2>Members</h2>
+            <div><span>Meet Our</span> <span class="description-title">Members</span></div>
+        </div>
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4">
                 <div id="memberCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#memberCarousel" th:each="member, iterStat : ${usernameMap}"
-                                    th:classappend="${iterStat.index == 0} ? 'active'" th:data-bs-slide-to="${iterStat.index}"></button>
-<!--                            <button type="button" data-bs-target="#memberCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>-->
-<!--                            <button type="button" data-bs-target="#memberCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>-->
-<!--                            <button type="button" data-bs-target="#memberCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+                            <button type="button" data-bs-target="#memberCarousel"
+                                    th:each="member, iterStat : ${usernameMap}"
+                                    th:classappend="${iterStat.index == 0} ? 'active'"
+                                    th:data-bs-slide-to="${iterStat.index}"></button>
+                            <!--                            <button type="button" data-bs-target="#memberCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>-->
+                            <!--                            <button type="button" data-bs-target="#memberCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>-->
+                            <!--                            <button type="button" data-bs-target="#memberCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
                         </div>
                         <div class="carousel-item" data-bs-interval="10000" th:each="member, iterStat : ${usernameMap}"
                              th:classappend="${iterStat.index == 0} ? 'active'">
@@ -235,8 +248,11 @@
                                     <img th:src="'https://starlightskins.lunareclipse.studio/render/bitzel/' + ${member.key} + '/full'"
                                          th:alt="${member.value} + ' Skin'"
                                          class="col-lg-1">
-                                    <h5><span th:text="${member.value}"></span></h5>
-                                    <p>Some representative placeholder content text.</p>
+                                    <h5><a th:href="'/member/' + ${member.value}"><span
+                                            th:text="${member.value}"></span></a></h5>
+                                    <p>Has played for <span
+                                            th:text="${data.getJSONObject(member.key).optInt('total_playtime', 0)/3600000}"></span>
+                                        hours.</p>
                                 </div>
                             </div>
                         </div>
