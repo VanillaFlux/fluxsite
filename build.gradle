@@ -2,7 +2,6 @@ plugins {
     id "java"
     id "org.springframework.boot" version "$spring_boot_version"
     id "io.spring.dependency-management" version "$spring_dep_version"
-    id "war"
 }
 
 group = "com.vanillaflux"
@@ -10,15 +9,19 @@ version = "$project_version-$build_status.$build_number"
 
 repositories {
     mavenCentral()
+    maven { url 'https://jitpack.io' }
+
     maven {
-        name = "quipt"
-        url = "https://repo.vanillaflux.com/repository/quipt/"
+        url "https://maven.pkg.github.com/Quipt-Minecraft/quipt"
+        credentials {
+            username = "QuickScythe"
+            password = System.getenv("QUIPT_ACCESS_TOKEN")
+        }
     }
 }
 
-bootWar {
-    archiveFileName = "${rootProject.name}-latest.war"
-
+bootJar {
+    mainClass = 'com.vanillaflux.site.Main'
 }
 
 dependencies {
@@ -29,9 +32,10 @@ dependencies {
 
     implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
     implementation "org.springframework.boot:spring-boot-starter-web"
-    providedRuntime "org.springframework.boot:spring-boot-starter-tomcat"
+    implementation "org.springframework.boot:spring-boot-starter-tomcat"
     implementation "org.json:json:$json_version"
-    implementation "com.quiptmc:quipt-core:$quipt_core_version"
+//    implementation "com.quiptmc:quipt-core:$quipt_core_version"
+    implementation "com.github.Quipt-Minecraft.quipt:core:f6896143fc"
     implementation "com.zaxxer:HikariCP:$hikari_version"
     implementation "mysql:mysql-connector-java:8.0.33"
 

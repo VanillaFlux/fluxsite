@@ -48,7 +48,7 @@
 
 <script th:src="@{/assets/vendor/prism/js/prism.js}"></script>
 
-<header id="header" class="header d-flex align-items-center fixed-top">
+<header id="header" class="header dark-background d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
         <a href="index.html" class="logo d-flex align-items-center">
@@ -61,6 +61,40 @@
                 <span th:text="${error}"></span>
             </div>
         </div>
+        <!-- Start Nav Menu -->
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#stats">Stats</a></li>
+                <li><a href="/#members">Members</a></li>
+                <li><a href="/#team">Apply</a></li>
+                <li><a href="/#pricing">Discord</a></li>
+                <li class="dropdown"><a href="#"><span>Downloads</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li class="dropdown"><a href="#"><span>Season 1</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="#">World Download</a></li>
+                                <li><a href="#">Client Mod Pack</a></li>
+                                <li><a href="#">Server Mod Pack</a></li>
+                                <li><a href="#">Server Resource Pack</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>Season 2</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="" class="disabled" alt="Season not complete">World Download</a></li>
+                                <li><a href="#">Client Mod Pack</a></li>
+                                <li><a href="#">Server Mod Pack</a></li>
+                                <li><a href="" class="disabled" alt="Season not complete">Server Resource Pack</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+        <!-- /Nav Menu -->
 
 
     </div>

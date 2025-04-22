@@ -1,3 +1,16 @@
 .members h5 {
     color: var(--accent-color);
 }
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: var(--disabled-link);
+    text-decoration: line-through;
+}
+a.disabled:hover {
+pointer-events: none;
+    cursor: default;
+    color: var(--disabled-link);
+    text-decoration: line-through;
+}
